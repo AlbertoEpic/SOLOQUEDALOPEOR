@@ -1,0 +1,16 @@
+﻿---
+title: "Domingo barranquil I: Argatín Superior"
+publishDate: 2011-06-16T15:31:00Z
+updateDate: 2015-04-06T10:28:47Z
+draft: false
+author: "AlbertoEpic"
+excerpt: "El pasado domingo, por aquello de variar, en lugar de un barranco hicimos dos (Bueno, yo me evité el segundo, con una rodilla resentida). El primero fue el barranco Argatín. A continuación, el testimonio gráfico: Y puedes ver la crónica de "
+category: "Descenso de barrancos"
+tags:
+  - "Descenso de barrancos"
+---
+El pasado domingo, por aquello de variar, en lugar de un barranco hicimos dos (Bueno, yo me evité el segundo, con una rodilla resentida). El primero fue el barranco Argatín. A continuación, el testimonio gráfico:
+
+<iframe allowfullscreen="" frameborder="0" height="523" src="https://www.youtube.com/embed/EgEkQAJ9994?rel=0" width="657"></iframe>
+
+Y puedes ver la <a href="http://tritonesmajaras.blogspot.com/2011/06/barrancos-de-argantin-superior-y.html" target="_blank">crónica de Make en Los Tritones Majaras</a>.

@@ -1,0 +1,15 @@
+---
+title: "Cicloalpinismo: monte Sarasé"
+publishDate: 2020-09-20T10:06:18Z
+updateDate: 2020-09-20T10:24:45Z
+draft: false
+author: "AlbertoEpic"
+excerpt: "¿Sabes la última del mítico dúo formado por Myriam y AlbertoEpic? Se subieron a merendar a la cima del monte Sarasé (Entre Gavín y Sabocos) para jugar un poco con el drone... Puedes ver a continuación el vídeo resultante de la jornada vespe"
+category: "Bicicleta de montaña"
+tags:
+  - "cicloalpinismo"
+  - "Sarasé"
+  - "Valle de Tena"
+---
+¿Sabes la última del mítico dúo formado por Myriam y AlbertoEpic? Se subieron a merendar a la cima del monte Sarasé (Entre Gavín y Sabocos) para jugar un poco con el drone... Puedes ver a continuación el vídeo resultante de la jornada vespertina.https://youtu.be/39am9NGlcbUHemos añadido el track a nuestra base de datos. No es el óptimo, pero no había tiempo para más. Pensamos que lo óptimo, disponiendo de todo el día, sería salir de Gavín y regresar al mismo por el descenso de la <a href="https://es.wikiloc.com/rutas-mountain-bike/extrem-gavin-2019-track-oficial-28108694" target="_blank" rel="noopener noreferrer">ruta de enduro Gavin Xtrem</a>.
+<iframe src="https://www.alltrails.com/widget/map/activity-5542653591-10a5ab2?scrollZoom=false&hideName=true&u=m" width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="AllTrails: Trail Guides and Maps for Hiking, Camping, and Running"></iframe>

@@ -1,0 +1,15 @@
+---
+title: "Los maestros de Spiderman..."
+publishDate: 2011-03-29T21:41:00Z
+updateDate: 2015-04-06T10:28:49Z
+draft: false
+author: "AlbertoEpic"
+excerpt: "Pensaba yo que Spiderman era un superhéroe, pero estos hacen lo mismo y sin pijama de araña. Es alucinante lo que un ser humano puede hacer con un poco de práctica..."
+category: "Otros"
+tags:
+  - "Uncategorized"
+---
+Pensaba yo que Spiderman era un superhéroe, pero estos hacen lo mismo y sin pijama de araña. Es alucinante lo que un ser humano puede hacer con un poco de práctica...
+
+<iframe allowfullscreen="" frameborder="0" height="480" src="https://www.youtube.com/embed/9HSyhNU8_Nc?rel=0" title="YouTube video player" width="600"></iframe>
+

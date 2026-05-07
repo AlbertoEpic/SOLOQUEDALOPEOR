@@ -1,0 +1,37 @@
+---
+title: "Cicloalpinismo: Garmo del Pico (2.674m)"
+image: "https://i.imgur.com/R7CPaiz.jpg"
+publishDate: 2020-10-12T17:58:15Z
+updateDate: 2020-10-12T18:18:06Z
+draft: false
+author: "AlbertoEpic"
+excerpt: "El otro día, AlbertoEpic partió de la base de SQLP con otra completa misión: la ascensión al Garmo del Pico para la elaboración de una foto esférica para pano360.soloquedalopeor.com y obtener unas valiosas imágenes a vista de drone desde la"
+category: "Bicicleta de montaña"
+tags:
+  - "cicloalpinismo"
+  - "Garmo del Pico"
+  - "Valle de Tena"
+---
+El otro día, AlbertoEpic partió de la base de SQLP con otra completa misión: la ascensión al Garmo del Pico para la elaboración de una foto esférica para <a href="http://pano360.soloquedalopeor.com" target="_blank" rel="noopener noreferrer"><b>pano360.soloquedalopeor.com</b></a> y obtener unas valiosas imágenes a vista de drone desde las alturas...
+El desarrollo de la jornada fue todo un éxito y ahora SQLP cuenta con foto esférica y vídeo espectacular.
+
+Antes de mostrártelos, añadimos a continuación el track de la actividad para que te sitúes: AlbertoEpic ascendió en BTT por la pista, para posteriormente abandonarla y seguir porteando la bici hasta la cota 2.220m. La dejó allí y terminó la ascensión a pie. Al regreso recogió la BTT y bajó en un pispás del tirón hasta la furgo. :-)
+
+<iframe src="https://ridewithgps.com/embeds?type=route&id=34402689&metricUnits=true&sampleGraph=true" style="width: 1px; min-width: 100%; height: 700px; border: none;" scrolling="no"></iframe>
+
+A continuación te dejamos con las siempre jugosas imágenes registradas por el drone:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lcHfZU0fCfg" title="YouTube video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<figure><a href="https://pano360.soloquedalopeor.com/panorama/garmo-del-pico-2-674m/" target="_blank" rel="noopener noreferrer"><img width="300" height="300" src="https://i.imgur.com/R7CPaiz.jpg" alt="" loading="lazy"></a></figure>
+<h3><a href="https://pano360.soloquedalopeor.com/panorama/garmo-del-pico-2-674m/" target="_blank" rel="noopener noreferrer">Garmo del Pico - Foto esférica</a></h3>
+Aquí puedes acceder a la foto esférica en la sección específica de nuestra web, Pano360.soloquedalopeor.com
+<figure>
+<img width="1920" height="1080" src="https://i.imgur.com/Spj2a5I.jpg" alt="" loading="lazy"><figcaption>AlbertoEpic en la cima S del Garmo del Pico.</figcaption></figure>
+<figure>
+<img width="1920" height="1080" src="https://i.imgur.com/1x0e76g.jpg" alt="" loading="lazy">
+
+<figcaption>AlbertoEpic recorriendo la arista del pico, de regreso al punto en el que le esperaba la BTT...</figcaption></figure>
+<figure>
+<img width="1920" height="1080" src="https://i.imgur.com/XzWgJNi.jpg" alt="" loading="lazy">
+
+<figcaption>Momentos después de recoger la BTT, descenso ininterrumpido hasta la furgo...</figcaption></figure>
