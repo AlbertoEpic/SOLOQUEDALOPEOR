@@ -1785,8 +1785,15 @@ export function remarkFolderImages() {
         return; // Not a recognized content type
       }
 
+      if (imagePath.startsWith('assets/') || imagePath.startsWith('./assets/')) {
+        const cleanImagePath = imagePath.replace(/^\.\//, '');
+        let finalUrl = `/${collection}/${cleanImagePath}`;
+        finalUrl = convertToWebP(finalUrl);
+        node.url = finalUrl;
+      }
+
       // Handle folder-based content (e.g., /posts/my-post/index.md with image.png)
-      if (isFolderBased && contentSlug) {
+      else if (isFolderBased && contentSlug) {
         // Sync script copies images to post folder root, removing subfolder prefixes
         // Strip 'images/' or 'attachments/' prefixes if present
         let cleanImagePath = imagePath;

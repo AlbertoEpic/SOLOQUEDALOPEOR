@@ -47,7 +47,7 @@ pnpm build
 Perfect! Astro Modular is designed specifically for Obsidian users.
 
 **Quick Start:**
-1. Open folder as vault: Navigate to `src/content/` in Obsidian
+1. Open folder as vault: Navigate to `src/SOLOQUEDALOPEOR/` in Obsidian
 2. Trust the author and enable the preconfigured plugins
 3. Use the Astro Modular Settings wizard to configure your theme and preferences
 4. Start writing with the included templates and hotkeys
@@ -69,7 +69,7 @@ No problem! You can still use Astro Modular with any editor.
 
 **Quick Start:**
 1. **Edit `src/config.ts`** to customize your site settings
-2. **Create content** in `src/content/posts/` using standard markdown
+2. **Create content** in `src/SOLOQUEDALOPEOR/posts/` using standard markdown
 3. **Deploy** when ready
 
 **Next Steps:**
@@ -115,7 +115,7 @@ Optimized for performance with automatic image optimization and lazy loading.
 ## Next Steps
 
 ### For Obsidian Users:
-1. **Set up the vault** - Open `src/content/` in Obsidian
+1. **Set up the vault** - Open `src/SOLOQUEDALOPEOR/` in Obsidian
 2. **Configure with the plugin** - Use Astro Modular Settings
 3. **Start writing** - Use the included templates and hotkeys
 4. **Read the vault guide** - [Obsidian Vault Guide](vault-cms-guide.md)

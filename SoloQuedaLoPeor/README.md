@@ -102,7 +102,7 @@ This downloads the latest template, removes dev-only files, and installs depende
 - pnpm 10.29.3+ or npm 9.6.5+
 
 > [!NOTE]
-> While this theme works great with any markdown editor, it's specifically optimized for Obsidian use. See the [Astro Suite Vault Guide](src/content/posts/vault-cms-guide.md) for Obsidian-specific features.
+> While this theme works great with any markdown editor, it's specifically optimized for Obsidian use. See the [Astro Suite Vault Guide](src/SOLOQUEDALOPEOR/posts/vault-cms-guide.md) for Obsidian-specific features.
 
 ### Setup
 
@@ -135,7 +135,7 @@ To pull the latest theme release (framework files, Astro, config) while keeping 
 pnpm run update
 ```
 
-This downloads the latest release from GitHub, replaces framework files, restores your `src/content` and profile/favicon assets, then runs `pnpm install`. After updating, open Obsidian and use **Astro Modular Settings → Apply all settings** so your saved settings are written to the new `config.ts` if needed.
+This downloads the latest release from GitHub, replaces framework files, restores your `src/SOLOQUEDALOPEOR` vault and profile/favicon assets, then runs `pnpm install`. After updating, open Obsidian and use **Astro Modular Settings → Apply all settings** so your saved settings are written to the new `config.ts` if needed.
 
 ### Configuration
 
@@ -148,10 +148,10 @@ Set your deployment platform once in `src/config.ts` under `deployment.platform`
 ## Documentation
 
 For detailed guides, see the included blog posts:
-- **[Getting Started](src/content/posts/getting-started.md)** - complete setup and workflow guide
-- **[Formatting Reference](src/content/posts/formatting-reference.md)** - comprehensive formatting reference  
-- **[Vault CMS Guide](src/content/posts/vault-cms-guide.md)** - Obsidian vault walkthrough
-- **[Obsidian Embeds Demo](src/content/posts/obsidian-embeds-demo.md)** - Obsidian embed examples
+- **[Getting Started](src/SOLOQUEDALOPEOR/posts/getting-started.md)** - complete setup and workflow guide
+- **[Formatting Reference](src/SOLOQUEDALOPEOR/posts/formatting-reference.md)** - comprehensive formatting reference  
+- **[Vault CMS Guide](src/SOLOQUEDALOPEOR/posts/vault-cms-guide.md)** - Obsidian vault walkthrough
+- **[Obsidian Embeds Demo](src/SOLOQUEDALOPEOR/posts/obsidian-embeds-demo.md)** - Obsidian embed examples
 
 **For AI Agents & Developers:** See [AGENTS.md](AGENTS.md) for comprehensive technical documentation.
 

@@ -280,7 +280,7 @@ The theme includes a Giscus-powered commenting system that uses GitHub Discussio
 ## Content Structure
 
 ```
-src/content/
+src/SOLOQUEDALOPEOR/
 ├── posts/                   # Blog posts
 ├── pages/                   # Static pages
 ├── special/                 # Special pages (home, 404, etc.)
@@ -292,7 +292,7 @@ src/content/
 ## Writing Content
 
 ### Posts
-Create posts in `src/content/posts/`. H1 titles are hardcoded from frontmatter, so content should start with H2.
+Create posts in `src/SOLOQUEDALOPEOR/posts/`. H1 titles are hardcoded from frontmatter, so content should start with H2.
 
 ```markdown
 ---
@@ -315,7 +315,7 @@ All content types support folder-based organization with co-located assets. Use 
 ## Obsidian Integration
 
 ### Using the Included Vault
-Open `src/content/` in Obsidian to use the preconfigured vault features:
+Open `src/SOLOQUEDALOPEOR/` in Obsidian to use the preconfigured vault features:
 - **Astro Composer**: Easily create and manage posts
 - **Minimal Theme**: Optimized for writing
 - **Git Plugin**: Commit and sync directly from Obsidian

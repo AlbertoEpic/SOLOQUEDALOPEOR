@@ -1,6 +1,6 @@
 ---
 title: Prueba de post - template 1
-image: ./assets/2026/Untitled.webp
+image: ./assets/2026/Pasted%20image%2020260504184433.png
 publishDate: 2026-05-04T18:17:33Z
 updateDate: 2026-05-04T18:17:33Z
 draft: false

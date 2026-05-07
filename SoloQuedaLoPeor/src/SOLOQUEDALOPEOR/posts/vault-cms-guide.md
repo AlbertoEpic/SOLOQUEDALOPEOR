@@ -219,7 +219,7 @@ It's recommended to disable the Git plugin on mobile and use something like [Git
 
 Here's how to disable it: 
 
-1. On your mobile device, open Obsidian, and open your Astro Modular site's `src/content` folder as a vault. 
+1. On your mobile device, open Obsidian, and open your Astro Modular site's `src/SOLOQUEDALOPEOR` folder as a vault. 
 2. Open the left sidebar and open Settings. 
 3. Scroll down to community plugins and tap on Git from the list.
 4. Scroll all the way down and select "Disable on this device".

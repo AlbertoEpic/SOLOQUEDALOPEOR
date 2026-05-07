@@ -162,6 +162,9 @@ if (siteConfig.postOptions.graphView.enabled && siteConfig.postOptions.graphView
               // Single-file post - remove attachments/ prefix
               imageSrc = cleanImagePath.replace('attachments/', '');
               imageBasePath = '/posts/attachments/';
+            } else if (cleanImagePath.startsWith('./assets/') || cleanImagePath.startsWith('assets/')) {
+              imageSrc = cleanImagePath.replace(/^\.\//, '');
+              imageBasePath = '/posts/';
             } else {
               // Folder-based post - sync script copies images to post folder root
               // Remove 'images/' or 'attachments/' prefixes if present (sync script removes them)

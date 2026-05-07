@@ -12,6 +12,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const projectRoot = path.join(__dirname, '..');
+const contentRoot = path.join(projectRoot, 'src', 'SOLOQUEDALOPEOR');
 
 // Get all markdown files in content directory
 function getAllMarkdownFiles(dir) {
@@ -99,28 +100,28 @@ function checkImageExists(imageSrc, filePath) {
   
   // 2. Check in general images directory for each content type
   if (isPostsFile) {
-    const generalImagesPath = path.join(projectRoot, 'src', 'content', 'posts', 'images', imagePath);
+    const generalImagesPath = path.join(contentRoot, 'posts', 'images', imagePath);
     if (fs.existsSync(generalImagesPath)) {
       return { exists: true, path: generalImagesPath };
     }
   }
   
   if (isPagesFile) {
-    const generalImagesPath = path.join(projectRoot, 'src', 'content', 'pages', 'images', imagePath);
+    const generalImagesPath = path.join(contentRoot, 'pages', 'images', imagePath);
     if (fs.existsSync(generalImagesPath)) {
       return { exists: true, path: generalImagesPath };
     }
   }
   
   if (isProjectsFile) {
-    const generalImagesPath = path.join(projectRoot, 'src', 'content', 'projects', 'images', imagePath);
+    const generalImagesPath = path.join(contentRoot, 'projects', 'images', imagePath);
     if (fs.existsSync(generalImagesPath)) {
       return { exists: true, path: generalImagesPath };
     }
   }
   
   if (isDocsFile) {
-    const generalImagesPath = path.join(projectRoot, 'src', 'content', 'docs', 'images', imagePath);
+    const generalImagesPath = path.join(contentRoot, 'docs', 'images', imagePath);
     if (fs.existsSync(generalImagesPath)) {
       return { exists: true, path: generalImagesPath };
     }
@@ -177,8 +178,7 @@ function checkImageExists(imageSrc, filePath) {
 function main() {
   console.log('🔍 Checking for missing images...\n');
   
-  const contentDir = path.join(projectRoot, 'src', 'content');
-  const markdownFiles = getAllMarkdownFiles(contentDir);
+  const markdownFiles = getAllMarkdownFiles(contentRoot);
   
   let totalImages = 0;
   let missingImages = 0;

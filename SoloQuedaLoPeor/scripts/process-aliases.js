@@ -14,13 +14,14 @@ const log = {
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const CONTENT_BASE = 'src/SOLOQUEDALOPEOR';
 
 // Define content directories to process
 const CONTENT_DIRS = [
-  'src/content/pages',
-  'src/content/posts',
-  'src/content/projects',
-  'src/content/docs'
+  `${CONTENT_BASE}/pages`,
+  `${CONTENT_BASE}/posts`,
+  `${CONTENT_BASE}/projects`,
+  `${CONTENT_BASE}/docs`
 ];
 
 // Function to parse frontmatter from markdown content

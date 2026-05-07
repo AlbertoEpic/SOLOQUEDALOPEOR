@@ -30,7 +30,7 @@
   "showBranchStatusBar": false,
   "setLastSaveToLastCommit": false,
   "submoduleRecurseCheckout": false,
-  "gitDir": "",
+  "gitDir": "https://github.com/AlbertoEpic/SOLOQUEDALOPEOR.git",
   "showFileMenu": false,
   "authorInHistoryView": "hide",
   "dateInHistoryView": true,

@@ -14,11 +14,83 @@ import { siteConfig } from '../config';
     }
   }
 
+  function getContentCollectionFromPath(pathname: string): string | null {
+    if (pathname.startsWith('/posts/')) return 'posts';
+    if (pathname.startsWith('/projects/')) return 'projects';
+    if (pathname.startsWith('/docs/')) return 'docs';
+    return null;
+  }
+
+  function normalizeLegacyAssetUrl(url: string, collection: string | null): string {
+    if (!url) {
+      return url;
+    }
+
+    if (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('data:') || url.startsWith('/_image')) {
+      return url;
+    }
+
+    if (collection) {
+      if (url.startsWith(`/${collection}/attachments/assets/`)) {
+        return url.replace(`/${collection}/attachments/assets/`, `/${collection}/assets/`);
+      }
+
+      const folderBasedAssetPattern = new RegExp(`^/${collection}/[^/]+/assets/`);
+      if (folderBasedAssetPattern.test(url)) {
+        return url.replace(folderBasedAssetPattern, `/${collection}/assets/`);
+      }
+
+      if (url.startsWith('./assets/')) {
+        return `/${collection}/${url.slice(2)}`;
+      }
+
+      if (url.startsWith('assets/')) {
+        return `/${collection}/${url}`;
+      }
+    }
+
+    return url;
+  }
+
+  function normalizeLegacyAssetReferences(contentElement: Element) {
+    const collection = getContentCollectionFromPath(window.location.pathname);
+    if (!collection) {
+      return;
+    }
+
+    contentElement.querySelectorAll('img').forEach(img => {
+      const src = img.getAttribute('src');
+      if (!src) {
+        return;
+      }
+
+      const normalizedSrc = normalizeLegacyAssetUrl(src, collection);
+      if (normalizedSrc !== src) {
+        img.setAttribute('src', normalizedSrc);
+      }
+    });
+
+    contentElement.querySelectorAll('a[href]').forEach(link => {
+      const href = link.getAttribute('href');
+      if (!href) {
+        return;
+      }
+
+      const normalizedHref = normalizeLegacyAssetUrl(href, collection);
+      if (normalizedHref !== href) {
+        link.setAttribute('href', normalizedHref);
+      }
+    });
+  }
+
   function initializeImageGalleries() {
     const contentElement = document.querySelector('.prose');
     if (!contentElement) {
       return;
     }
+
+    normalizeLegacyAssetReferences(contentElement);
+
     const paragraphs = contentElement.querySelectorAll('p');
 
     // Find all paragraphs with images (single or multiple)

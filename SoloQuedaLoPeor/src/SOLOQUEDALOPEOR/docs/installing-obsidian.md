@@ -41,7 +41,7 @@ This guide shows you how to install Obsidian for use with your Astro Modular blo
 
 1. Open Obsidian
 2. Choose "Open folder as vault"
-3. Select your blog's `src/content` folder (typically, or root)
+3. Select your blog's `src/SOLOQUEDALOPEOR` folder (typically, or root)
 4. Click "Open"
 
 ## Next Steps

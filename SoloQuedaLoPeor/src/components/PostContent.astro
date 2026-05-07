@@ -126,6 +126,8 @@ const processedImage = (() => {
                 if (isFileBased) {
                   // Single-file post - remove attachments/ prefix
                   cleanImagePath = cleanImagePath.replace('attachments/', '');
+                } else if (cleanImagePath.startsWith('./assets/') || cleanImagePath.startsWith('assets/')) {
+                  cleanImagePath = cleanImagePath.replace(/^\.\//, '');
                 } else {
                   // Folder-based post - sync script copies images to post folder root
                   // Remove 'images/' or 'attachments/' prefixes if present (sync script removes them)
@@ -154,6 +156,10 @@ const processedImage = (() => {
                 if (typeof cleanImagePath === 'string' && cleanImagePath.startsWith('attachments/')) {
                   // Single-file post with image in attachments folder
                   return '/posts/attachments/';
+                }
+
+                if (typeof cleanImagePath === 'string' && (cleanImagePath.startsWith('./assets/') || cleanImagePath.startsWith('assets/'))) {
+                  return '/posts/';
                 }
 
                 // 4. Folder-based post - sync script copies images to post folder root

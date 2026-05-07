@@ -22,13 +22,14 @@ const VALIDATE_ONLY = process.argv.includes('--validate');
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const CONTENT_BASE = 'src/SOLOQUEDALOPEOR';
 
 // Define content directories to process
 const CONTENT_DIRS = [
-  'src/content/pages',
-  'src/content/posts',
-  'src/content/projects',
-  'src/content/docs'
+  `${CONTENT_BASE}/pages`,
+  `${CONTENT_BASE}/posts`,
+  `${CONTENT_BASE}/projects`,
+  `${CONTENT_BASE}/docs`
 ];
 
 // Function to parse frontmatter from markdown content
@@ -126,32 +127,32 @@ function getContentUrl(filePath, isPost = false) {
   const normalizedPath = filePath.replace(/\\/g, '/');
   
   if (isPost) {
-    // For posts: extract path after 'src/content/posts/' and remove '.md'
-    let postPath = normalizedPath.replace(/^.*src\/content\/posts\//, '').replace(/\.md$/, '');
+    // For posts: extract path after the content base and remove '.md'
+    let postPath = normalizedPath.replace(/^.*src\/SOLOQUEDALOPEOR\/posts\//, '').replace(/\.md$/, '');
     // Handle folder-based content: remove '/index' suffix
     if (postPath.endsWith('/index')) {
       postPath = postPath.replace('/index', '');
     }
     return `/posts/${postPath}`;
-  } else if (normalizedPath.includes('src/content/projects/')) {
-    // For projects: extract path after 'src/content/projects/' and remove '.md'
-    let projectPath = normalizedPath.replace(/^.*src\/content\/projects\//, '').replace(/\.md$/, '');
+  } else if (normalizedPath.includes('src/SOLOQUEDALOPEOR/projects/')) {
+    // For projects: extract path after the content base and remove '.md'
+    let projectPath = normalizedPath.replace(/^.*src\/SOLOQUEDALOPEOR\/projects\//, '').replace(/\.md$/, '');
     // Handle folder-based content: remove '/index' suffix
     if (projectPath.endsWith('/index')) {
       projectPath = projectPath.replace('/index', '');
     }
     return `/projects/${projectPath}`;
-  } else if (normalizedPath.includes('src/content/docs/')) {
-    // For docs: extract path after 'src/content/docs/' and remove '.md'
-    let docPath = normalizedPath.replace(/^.*src\/content\/docs\//, '').replace(/\.md$/, '');
+  } else if (normalizedPath.includes('src/SOLOQUEDALOPEOR/docs/')) {
+    // For docs: extract path after the content base and remove '.md'
+    let docPath = normalizedPath.replace(/^.*src\/SOLOQUEDALOPEOR\/docs\//, '').replace(/\.md$/, '');
     // Handle folder-based content: remove '/index' suffix
     if (docPath.endsWith('/index')) {
       docPath = docPath.replace('/index', '');
     }
     return `/docs/${docPath}`;
   } else {
-    // For pages: extract path after 'src/content/pages/' and remove '.md'
-    let pagePath = normalizedPath.replace(/^.*src\/content\/pages\//, '').replace(/\.md$/, '');
+    // For pages: extract path after the content base and remove '.md'
+    let pagePath = normalizedPath.replace(/^.*src\/SOLOQUEDALOPEOR\/pages\//, '').replace(/\.md$/, '');
     // Handle folder-based content: remove '/index' suffix
     if (pagePath.endsWith('/index')) {
       pagePath = pagePath.replace('/index', '');
@@ -194,10 +195,10 @@ async function processMarkdownFile(filePath, isPost = false) {
       if (isPost) {
         // Posts: /posts/alias → /posts/actual-slug
         redirectFrom = `/posts/${cleanAlias}`;
-      } else if (normalizedFilePath.includes('src/content/projects/')) {
+      } else if (normalizedFilePath.includes('src/SOLOQUEDALOPEOR/projects/')) {
         // Projects: /projects/alias → /projects/actual-slug
         redirectFrom = `/projects/${cleanAlias}`;
-      } else if (normalizedFilePath.includes('src/content/docs/')) {
+      } else if (normalizedFilePath.includes('src/SOLOQUEDALOPEOR/docs/')) {
         // Docs: /docs/alias → /docs/actual-slug
         redirectFrom = `/docs/${cleanAlias}`;
       } else {
@@ -843,7 +844,7 @@ async function generateRedirects() {
   let totalProcessedFiles = 0;
   
   // Process pages
-  const pagesPath = path.join(projectRoot, 'src/content/pages');
+  const pagesPath = path.join(projectRoot, 'src/SOLOQUEDALOPEOR/pages');
   try {
     await fs.access(pagesPath);
     const pageResult = await processDirectory(pagesPath, false);
@@ -854,7 +855,7 @@ async function generateRedirects() {
   }
   
   // Process posts
-  const postsPath = path.join(projectRoot, 'src/content/posts');
+  const postsPath = path.join(projectRoot, 'src/SOLOQUEDALOPEOR/posts');
   try {
     await fs.access(postsPath);
     const postResult = await processDirectory(postsPath, true);
@@ -865,7 +866,7 @@ async function generateRedirects() {
   }
   
   // Process projects
-  const projectsPath = path.join(projectRoot, 'src/content/projects');
+  const projectsPath = path.join(projectRoot, 'src/SOLOQUEDALOPEOR/projects');
   try {
     await fs.access(projectsPath);
     const projectResult = await processDirectory(projectsPath, false);
@@ -876,7 +877,7 @@ async function generateRedirects() {
   }
   
   // Process docs
-  const docsPath = path.join(projectRoot, 'src/content/docs');
+  const docsPath = path.join(projectRoot, 'src/SOLOQUEDALOPEOR/docs');
   try {
     await fs.access(docsPath);
     const docResult = await processDirectory(docsPath, false);

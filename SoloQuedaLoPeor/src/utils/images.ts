@@ -223,6 +223,11 @@ export function optimizePostImagePath(
     return getOptimizedFormat(attachPath);
   }
 
+  if (cleanPath.startsWith("./assets/") || cleanPath.startsWith("assets/")) {
+    const assetPath = cleanPath.startsWith("./") ? cleanPath.slice(2) : cleanPath;
+    return getOptimizedFormat(`/posts/${assetPath}`);
+  }
+
   // Folder-based post - sync script copies images to post folder root
   if (postId && postSlug) {
     // Remove leading "./" if present

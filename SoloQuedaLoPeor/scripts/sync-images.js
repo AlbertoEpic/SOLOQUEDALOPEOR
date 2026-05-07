@@ -12,30 +12,38 @@ const log = {
   warn: (...args) => console.warn(...args)
 };
 
+const CONTENT_BASE = 'src/SOLOQUEDALOPEOR';
+const SKIP_FOLDER_BASED_DIRS = new Set(['assets', 'attachments', 'plantillas', '.trash', '.obsidian', 'bases']);
+
 // Define source and target directories for posts, pages, projects, docs, and special
 const IMAGE_SYNC_CONFIGS = [
   {
-    source: 'src/content/posts/attachments',
+    source: `${CONTENT_BASE}/posts/attachments`,
     target: 'public/posts/attachments',
     name: 'posts'
   },
   {
-    source: 'src/content/pages/attachments',
+    source: `${CONTENT_BASE}/posts/assets`,
+    target: 'public/posts/attachments/assets',
+    name: 'posts shared assets'
+  },
+  {
+    source: `${CONTENT_BASE}/pages/attachments`,
     target: 'public/pages/attachments',
     name: 'pages'
   },
   {
-    source: 'src/content/projects/attachments',
+    source: `${CONTENT_BASE}/projects/attachments`,
     target: 'public/projects/attachments',
     name: 'projects'
   },
   {
-    source: 'src/content/docs/attachments',
+    source: `${CONTENT_BASE}/docs/attachments`,
     target: 'public/docs/attachments',
     name: 'docs'
   },
   {
-    source: 'src/content/special/attachments',
+    source: `${CONTENT_BASE}/special/attachments`,
     target: 'public/special/attachments',
     name: 'special'
   }
@@ -89,7 +97,7 @@ async function findImageFiles(dir, relativePath = '') {
 
 // Function to find folder-based content and sync their images
 async function syncFolderBasedImages(contentType) {
-  const contentDir = `src/content/${contentType}`;
+  const contentDir = `${CONTENT_BASE}/${contentType}`;
   const publicContentDir = `public/${contentType}`;
   
   try {
@@ -98,6 +106,10 @@ async function syncFolderBasedImages(contentType) {
     let totalSkipped = 0;
     
     for (const item of items) {
+      if (SKIP_FOLDER_BASED_DIRS.has(item)) {
+        continue;
+      }
+
       const itemPath = path.join(contentDir, item);
       const stat = await fs.stat(itemPath);
       
@@ -110,7 +122,7 @@ async function syncFolderBasedImages(contentType) {
         
         for (const imageFile of imageFiles) {
           // Handle attachments subfolder within folder-based content
-          // Convert src/content/posts/post-name/attachments/image.png -> public/posts/post-name/image.png
+          // Convert vault post attachments into the public content path
           let targetRelativePath = imageFile.relativePath;
           // Handle both forward and backward slashes for cross-platform compatibility
           if (targetRelativePath.startsWith('attachments/') || targetRelativePath.startsWith('attachments\\')) {
@@ -283,7 +295,7 @@ async function syncImagesForConfig(config) {
 
     // Cleanup: Remove files from target that no longer exist in source
     // We need to recursively clean up the target directory
-    await cleanupTargetDirectory(config.target, imageFiles);
+    await cleanupTargetDirectory(config.target, imageFiles, config.target);
 
     return { synced, skipped, removed: 0 }; // removed count handled in cleanup function
   } catch (error) {
@@ -293,7 +305,7 @@ async function syncImagesForConfig(config) {
 }
 
 // Recursively clean up target directory, removing files that no longer exist in source
-async function cleanupTargetDirectory(targetDir, sourceImageFiles) {
+async function cleanupTargetDirectory(targetDir, sourceImageFiles, rootTargetDir = targetDir) {
   // Create a set that maps both original paths and attachments subfolder paths
   const sourceFileSet = new Set();
   sourceImageFiles.forEach(f => {
@@ -323,7 +335,7 @@ async function cleanupTargetDirectory(targetDir, sourceImageFiles) {
       
       if (stat.isDirectory()) {
         // Recursively clean subdirectories
-        const subRemoved = await cleanupTargetDirectory(itemPath, sourceImageFiles);
+        const subRemoved = await cleanupTargetDirectory(itemPath, sourceImageFiles, rootTargetDir);
         removed += subRemoved;
         
         // Remove empty directories
@@ -337,7 +349,7 @@ async function cleanupTargetDirectory(targetDir, sourceImageFiles) {
         }
       } else {
         // Check if this file exists in source
-        const relativePath = path.relative(targetDir, itemPath).replace(/\\/g, '/');
+        const relativePath = path.relative(rootTargetDir, itemPath).replace(/\\/g, '/');
         if (!sourceFileSet.has(relativePath)) {
           await fs.unlink(itemPath);
           removed++;

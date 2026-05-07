@@ -35,6 +35,8 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const projectRoot = join(__dirname, "..");
+const CONTENT_BASE = join(projectRoot, "src", "SOLOQUEDALOPEOR");
+const CONTENT_BASE_PREFIX = "src/SOLOQUEDALOPEOR";
 
 // Configuration
 const OUTPUT_DIR = join(projectRoot, "public", "graph");
@@ -83,7 +85,7 @@ if (!existsSync(OUTPUT_DIR)) {
  */
 function generateNodeId(filePath, collectionType) {
   // Remove collection prefix and extension
-  let id = filePath.replace(`src/content/${collectionType}/`, "");
+  let id = filePath.replace(`${CONTENT_BASE_PREFIX}/${collectionType}/`, "");
   id = id.replace(".md", "");
   id = id.replace("/index", ""); // Handle folder-based posts
 
@@ -418,7 +420,7 @@ async function generateGraphData() {
     const maxNodes = getMaxNodesFromConfig();
 
     // Read all posts from the content directory
-    const postsDir = join(projectRoot, "src", "content", "posts");
+    const postsDir = join(CONTENT_BASE, "posts");
     log.info("📁 Reading posts from:", postsDir);
 
     const posts = readContentFiles(postsDir);

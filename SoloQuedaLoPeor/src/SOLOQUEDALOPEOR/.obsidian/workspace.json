@@ -23,12 +23,12 @@
             }
           },
           {
-            "id": "65ee131ea0b30ff0",
+            "id": "781f8ff8e995949e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/10-things-i-have-learned-about-mountainbiking.md",
+                "file": "posts/barranco-de-lumos.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -43,7 +43,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "10-things-i-have-learned-about-mountainbiking"
+              "title": "barranco-de-lumos"
             }
           }
         ],
@@ -120,7 +120,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "posts/10-things-i-have-learned-about-mountainbiking.md",
+                "file": "posts/barranco-de-lumos.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +130,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Enlaces entrantes de 10-things-i-have-learned-about-mountainbiking"
+              "title": "Enlaces entrantes de barranco-de-lumos"
             }
           },
           {
@@ -200,11 +200,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "65ee131ea0b30ff0",
+  "active": "781f8ff8e995949e",
   "lastOpenFiles": [
     "posts/1er-tri-neu-gore-tex-valle-de-benasque-cerler.md",
-    "posts/1a-suboda-tozal-de-guara.md",
+    "posts/Untitled.md",
     "bases/Home.base",
+    "posts/1-000m-de-desnivel-negativo-en-btt.md",
+    "posts/1a-suboda-tozal-de-guara.md",
     "posts/aguarales-de-valpalmas.md",
     "posts/formatting-reference.md",
     "pages/contact.md",

@@ -98,7 +98,7 @@ The suite is built on Obsidian's plugin ecosystem and designed to work with Astr
 1. Clone or download your Astro theme of choice
 2. Clone or download Vault CMS repository
 3. Open the folder of the version you want (Default, Minimal, or Docs)
-4. Copy the contents into your Astro project's `src/content` folder
+4. Copy the contents into your Astro project's `src/SOLOQUEDALOPEOR` folder
 5. Open Obsidian and select "Open folder as vault", choosing the folder with the `.obsidian` directory
 
 ## Project Status

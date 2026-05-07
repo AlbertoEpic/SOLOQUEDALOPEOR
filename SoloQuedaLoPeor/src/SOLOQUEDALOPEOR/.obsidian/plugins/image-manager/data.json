@@ -4,7 +4,7 @@
   "imageNameTemplate": "{{fileName}}",
   "attachmentLocation": "obsidian",
   "customAttachmentPath": "./assets",
-  "defaultProvider": "unsplash",
+  "defaultProvider": "local",
   "unsplashProxyServer": "",
   "pexelsApiKey": "",
   "pexelsApiKeySecretId": null,

@@ -1449,14 +1449,14 @@ var MdxDetector = class {
     } else if (projectDetection.vaultLocation === "nested-content") {
       contentBasePath = path3.resolve(vaultPath, "..");
     } else {
-      contentBasePath = path3.join(projectRootPath, "src", "content");
+      contentBasePath = path3.join(projectRootPath, "src", "SOLOQUEDALOPEOR");
     }
     console.debug("MdxDetector: contentBasePath =", contentBasePath);
     console.debug("MdxDetector: vaultLocation =", projectDetection.vaultLocation);
     console.debug("MdxDetector: contentTypes to scan =", contentTypes.map((ct) => `${ct.name} (${ct.folder})`));
     for (const contentType of contentTypes) {
       let contentTypePath;
-      if (contentType.folder.startsWith("src/content/")) {
+      if (contentType.folder.startsWith("src/content/") || contentType.folder.startsWith("src/SOLOQUEDALOPEOR/")) {
         contentTypePath = path3.join(projectRootPath, contentType.folder);
       } else {
         contentTypePath = path3.join(contentBasePath, contentType.folder);
@@ -1545,11 +1545,11 @@ var ContentTypeDetector = class {
     return contentTypes;
   }
   /**
-   * Find the src/content directory regardless of where the vault is located.
+  * Find the content vault directory regardless of where the vault is located.
    * Handles cases where vault is at:
-   * - src level (need to go into src/content)
-   * - src/content level (already there)
-   * - src/content/post level (vault is inside a content type, can't access parent, return null to use fallback)
+  * - src level (need to go into src/SOLOQUEDALOPEOR)
+  * - src/SOLOQUEDALOPEOR level (already there)
+  * - src/SOLOQUEDALOPEOR/post level (vault is inside a content type, can't access parent, return null to use fallback)
    */
   findContentDirectory(projectDetection) {
     if (!projectDetection || !projectDetection.projectRoot) {
@@ -2076,10 +2076,10 @@ var PathResolver = class {
     if (projectDetection && projectDetection.projectRoot && vaultPath) {
       const projectRoot = path6.isAbsolute(projectDetection.projectRoot) ? projectDetection.projectRoot : path6.resolve(vaultPath, projectDetection.projectRoot);
       let contentTypeAbsolutePath;
-      if (folderName.startsWith("src/content/") || folderName.includes("/src/content/")) {
+      if (folderName.startsWith("src/content/") || folderName.includes("/src/content/") || folderName.startsWith("src/SOLOQUEDALOPEOR/") || folderName.includes("/src/SOLOQUEDALOPEOR/")) {
         contentTypeAbsolutePath = path6.resolve(projectRoot, folderName);
       } else {
-        contentTypeAbsolutePath = path6.resolve(projectRoot, "src", "content", folderName);
+        contentTypeAbsolutePath = path6.resolve(projectRoot, "src", "SOLOQUEDALOPEOR", folderName);
       }
       const vaultAbsolutePath = path6.resolve(vaultPath);
       const relativePath = path6.relative(vaultAbsolutePath, contentTypeAbsolutePath);
@@ -2091,13 +2091,13 @@ var PathResolver = class {
   }
   /**
    * Get the folder path from project root to the content type folder.
-   * This is always "src/content/{folderName}" relative to project root.
+  * This is always "src/SOLOQUEDALOPEOR/{folderName}" relative to project root.
    * 
    * @param folderName The content type folder name (e.g., "docs", "posts")
-   * @returns Path from project root (e.g., "src/content/docs")
+   * @returns Path from project root (e.g., "src/SOLOQUEDALOPEOR/docs")
    */
   getFolderPathFromProjectRoot(folderName) {
-    return `src/content/${folderName}`;
+    return `src/SOLOQUEDALOPEOR/${folderName}`;
   }
   /**
    * Get the folder path for Astro Composer, which needs the path relative to vault root
@@ -11889,10 +11889,10 @@ var ConfigFlushService = class {
           showRightClickMenu: true,
           showFileExplorerIcon: true,
           focusLevel: "custom",
-          customFolderPath: "src/content",
+          customFolderPath: "src/SOLOQUEDALOPEOR",
           hideAncestorFolders: false
         };
-        console.debug("ConfigFlushService: Auto-configured Explorer Focus for root install (custom: src/content)");
+        console.debug("ConfigFlushService: Auto-configured Explorer Focus for root install (custom: src/SOLOQUEDALOPEOR)");
       } else {
         state.explorerFocus = {
           showRightClickMenu: true,

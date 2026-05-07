@@ -20,10 +20,11 @@ import { pipeline } from 'stream/promises';
 
 const ROOT = resolve(import.meta.dirname, '..');
 const REPO = 'davidvkimball/astro-modular';
+const USER_CONTENT_ROOT = 'src/SOLOQUEDALOPEOR';
 
 // Files and directories that belong to the USER and must be preserved
 const USER_PATHS = [
-  'src/content',       // All user content + .obsidian vault (plugin data.json files)
+  USER_CONTENT_ROOT,   // All user content + .obsidian vault (plugin data.json files)
   'public/profile.jpg',
   'public/profile.png',
   'public/profile.webp',
@@ -232,7 +233,7 @@ async function main() {
       if (statSync(full).isDirectory()) {
         // If it's a user directory root, skip recursing
         if (USER_PATHS.some(p => p.startsWith(rel + '/'))) {
-          // Only skip exact user-path prefixes like src/content
+          // Only skip exact user-path prefixes like the content vault root
           if (USER_PATHS.includes(rel)) continue;
           results.push(...listPaths(full, rel));
         } else {

@@ -222,7 +222,7 @@ export const siteConfig: SiteConfig = {
   },
   layout: {
     // [CONFIG:LAYOUT_CONTENT_WIDTH]
-    contentWidth: "45rem",
+    contentWidth: "70rem",
   },
   tableOfContents: {
     // [CONFIG:TABLE_OF_CONTENTS_ENABLED]
@@ -428,13 +428,13 @@ export const siteConfig: SiteConfig = {
       // [CONFIG:POST_OPTIONS_COMMENTS_PROVIDER]
       provider: "giscus",
       // [CONFIG:POST_OPTIONS_COMMENTS_REPO]
-      repo: "AlbertoEpic SOLOQUEDALOPEOR/AlbertoEpic SOLOQUEDALOPEOR",
+      repo: "AlbertoEpic/SOLOQUEDALOPEOR",
       // [CONFIG:POST_OPTIONS_COMMENTS_REPO_ID]
-      repoId: "[ID REPOSITORIO]",
+      repoId: "R_kgDOSWpIJg",
       // [CONFIG:POST_OPTIONS_COMMENTS_CATEGORY]
-      category: "[NOMBRE CATEGORÍA]",
+      category: "",
       // [CONFIG:POST_OPTIONS_COMMENTS_CATEGORY_ID]
-      categoryId: "[ID CATEGORÍA]",
+      categoryId: "DIC_kwDOSWpIJs4C8gB1",
       // [CONFIG:POST_OPTIONS_COMMENTS_MAPPING]
       mapping: "pathname",
       // [CONFIG:POST_OPTIONS_COMMENTS_STRICT]

@@ -2,7 +2,9 @@ import type { APIRoute } from 'astro';
 import fs from 'node:fs';
 import path from 'node:path';
 
-// Recursively list all files under src/content
+const contentRoot = path.join(process.cwd(), 'src', 'SOLOQUEDALOPEOR');
+
+// Recursively list all files under the content vault
 function listAllFiles(dir: string): string[] {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
   const results: string[] = [];
@@ -21,7 +23,6 @@ function listAllFiles(dir: string): string[] {
 
 export const GET: APIRoute = async () => {
   try {
-    const contentRoot = path.join(process.cwd(), 'src', 'content');
     const files = listAllFiles(contentRoot)
       .filter((p) => !p.includes(`${path.sep}bases${path.sep}`))
       .map((p) => {
