@@ -21,33 +21,8 @@
               "icon": "lucide-home",
               "title": "Home"
             }
-          },
-          {
-            "id": "781f8ff8e995949e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "posts/barranco-de-lumos.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "barranco-de-lumos"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -120,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "posts/barranco-de-lumos.md",
+                "file": "bases/Home.base",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Enlaces entrantes de barranco-de-lumos"
+              "title": "Enlaces entrantes de Home"
             }
           },
           {
@@ -200,7 +175,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "781f8ff8e995949e",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
     "posts/1er-tri-neu-gore-tex-valle-de-benasque-cerler.md",
     "posts/Untitled.md",

@@ -1,0 +1,164 @@
+---
+interface Props {
+  pageId: string;
+  pageUrl: string;
+  pageTitle: string;
+}
+
+const { pageId, pageUrl, pageTitle } = Astro.props;
+---
+
+<section id="comments" class="cusdis-section">
+  <div class="cusdis-header">
+    <span class="cusdis-header-line"></span>
+    <h2 class="cusdis-header-title">Comentarios</h2>
+    <span class="cusdis-header-line"></span>
+  </div>
+
+  <div class="cusdis-wrapper">
+    <div
+      id="cusdis_thread"
+      data-host="https://cusdis.com"
+      data-app-id="dea7fa59-dd58-48e4-b1e8-0298b6979cc6"
+      data-page-id={pageId}
+      data-page-url={pageUrl}
+      data-page-title={pageTitle}
+    ></div>
+  </div>
+</section>
+
+<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+
+<script>
+  function fitCusdisIframe() {
+    const iframe = document.querySelector<HTMLIFrameElement>('#cusdis_thread iframe');
+    if (!iframe) return;
+
+    // Remove any inline height restriction Cusdis sets
+    iframe.removeAttribute('height');
+    iframe.style.height = '';
+    iframe.style.minHeight = '';
+    iframe.style.overflow = 'hidden';
+    iframe.scrolling = 'no';
+
+    // Try to read content height (works if same-origin or after postMessage)
+    // Set a generous height to start while we wait for resize messages
+    iframe.style.height = '600px';
+  }
+
+  // Listen for Cusdis resize postMessage
+  window.addEventListener('message', (e) => {
+    if (e.origin !== 'https://cusdis.com') return;
+    try {
+      const data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
+      if (data?.from === 'cusdis' && data?.event === 'resize') {
+        const iframe = document.querySelector<HTMLIFrameElement>('#cusdis_thread iframe');
+        if (iframe && data.height) {
+          iframe.style.height = data.height + 'px';
+        }
+      }
+    } catch {}
+  });
+
+  // Watch for iframe insertion and apply fix immediately + after load
+  const observer = new MutationObserver(() => {
+    const iframe = document.querySelector<HTMLIFrameElement>('#cusdis_thread iframe');
+    if (!iframe) return;
+    observer.disconnect();
+
+    fitCusdisIframe();
+
+    iframe.addEventListener('load', () => {
+      fitCusdisIframe();
+      // Poll a few times after load for dynamic content rendering
+      [300, 700, 1200, 2000].forEach(ms =>
+        setTimeout(fitCusdisIframe, ms)
+      );
+    });
+  });
+
+  observer.observe(document.body, { childList: true, subtree: true });
+</script>
+
+<style>
+  .cusdis-section {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgb(var(--color-primary-200) / 0.6);
+  }
+
+  :global(.dark) .cusdis-section {
+    border-top-color: rgb(var(--color-primary-700) / 0.5);
+  }
+
+  .cusdis-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .cusdis-header-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgb(var(--color-primary-300) / 0.6),
+      transparent
+    );
+  }
+
+  :global(.dark) .cusdis-header-line {
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgb(var(--color-primary-600) / 0.5),
+      transparent
+    );
+  }
+
+  .cusdis-header-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgb(var(--color-primary-400));
+    white-space: nowrap;
+    margin: 0;
+  }
+
+  :global(.dark) .cusdis-header-title {
+    color: rgb(var(--color-primary-500));
+  }
+
+  .cusdis-wrapper {
+    border-radius: 0.75rem;
+    padding: 1.75rem;
+    background: rgb(var(--color-primary-50) / 0.5);
+    border: 1px solid rgb(var(--color-primary-200) / 0.5);
+    transition: border-color 0.2s ease;
+  }
+
+  :global(.dark) .cusdis-wrapper {
+    background: rgb(var(--color-primary-900) / 0.3);
+    border-color: rgb(var(--color-primary-700) / 0.4);
+  }
+
+  .cusdis-wrapper:has(#cusdis_thread:not(:empty)) {
+    padding: 1.75rem;
+  }
+
+  /* Cusdis iframe reset */
+  :global(#cusdis_thread iframe) {
+    border: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+    min-height: 300px;
+  }
+
+  :global(#cusdis_thread) {
+    overflow: visible !important;
+  }
+</style>
